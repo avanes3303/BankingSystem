@@ -1,0 +1,16 @@
+﻿version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: atm_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: atm_db
+    volumes:
+      - atm_data:/var/lib/postgresql/data
+
+volumes:
+  atm_data:
